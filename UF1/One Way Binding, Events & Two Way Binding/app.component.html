@@ -1,0 +1,31 @@
+<!-- Para vincular el contenido de la variable se hace con {{}} -->
+<div class="general">
+<div >
+  <h1>Ficha de personaje</h1>
+  <label for="nombre">Nombre:</label>
+  <input type="text" [(ngModel)]="nombre"><br>
+  <label for="fuerza">Fuerza:</label>
+  <input type="number" [(ngModel)]="fuerza" readonly><br>
+  <label for="destreza">Destreza:</label>
+  <input type="number" [(ngModel)]="destreza" readonly><br>
+  <label for="inteligencia">Inteligencia:</label>
+  <input type="number" [(ngModel)]="inteligencia" readonly><br>
+  <label for="constitucion">Constitucion:</label>
+  <input type="number" [(ngModel)]="constitucion" readonly><br>
+  <input type="submit" value="Generar" (click)="generateInfo()">
+  <input type="submit" value="Guardar" (click)="guardarInfo()">
+</div>
+<div>
+  <h1>Personaje guardado</h1>
+  <label for="nombre">Nombre:</label>
+  <input type="text" [(ngModel)]="nombre2" readonly><br>
+  <label for="fuerza">Fuerza:</label>
+  <input type="number" [(ngModel)]="fuerza2" readonly><br>
+  <label for="destreza">Destreza:</label>
+  <input type="number" [(ngModel)]="destreza2" readonly><br>
+  <label for="inteligencia">Inteligencia:</label>
+  <input type="number" [(ngModel)]="inteligencia2" readonly><br>
+  <label for="constitucion">Constitucion:</label>
+  <input type="number" [(ngModel)]="constitucion2" readonly><br>
+</div>
+</div>

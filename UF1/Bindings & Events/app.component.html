@@ -1,0 +1,21 @@
+<div class="card-container">
+  <div class="card" *ngFor="let character of serverCharacters">
+    <label for="name">Name:</label>
+    <input type="text" name="name" [value]="character.name" [readonly]="!character.editable" [(ngModel)]="character.name">
+    <label for="strength">Strength:</label>
+    <input type="number" name="strength" [value]="character.strength" [readonly]="!character.editable" [(ngModel)]="character.strength">
+    <label for="agility">Agility:</label>
+    <input type="number" name="agility" [value]="character.agility" [readonly]="!character.editable" [(ngModel)]="character.agility">
+    <label for="intelligence">Intelligence</label>
+    <input type="number" name="intelligence" [value]="character.intelligence" [readonly]="!character.editable" [(ngModel)]="character.intelligence">
+    <label for="life">Life:</label>
+    <input type="number" name="life" [value]="character.life" [readonly]="!character.editable" [(ngModel)]="character.life">
+    <input type="submit" [value]="character.editable ? 'Save' : 'Edit'" (click)="cambiarEditable(character)">
+  </div>
+
+  <!-- Dentro del parágrafo va la información del Character que se está modifcando -->
+</div>
+
+<p>
+  {{ personaje }}
+</p>
