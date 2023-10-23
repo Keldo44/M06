@@ -1,21 +1,22 @@
-<div class="card-container">
-  <div class="card" *ngFor="let character of serverCharacters">
-    <label for="name">Name:</label>
-    <input type="text" name="name" [value]="character.name" [readonly]="!character.editable" [(ngModel)]="character.name">
-    <label for="strength">Strength:</label>
-    <input type="number" name="strength" [value]="character.strength" [readonly]="!character.editable" [(ngModel)]="character.strength">
-    <label for="agility">Agility:</label>
-    <input type="number" name="agility" [value]="character.agility" [readonly]="!character.editable" [(ngModel)]="character.agility">
-    <label for="intelligence">Intelligence</label>
-    <input type="number" name="intelligence" [value]="character.intelligence" [readonly]="!character.editable" [(ngModel)]="character.intelligence">
-    <label for="life">Life:</label>
-    <input type="number" name="life" [value]="character.life" [readonly]="!character.editable" [(ngModel)]="character.life">
-    <input type="submit" [value]="character.editable ? 'Save' : 'Edit'" (click)="cambiarEditable(character)">
+<div class="pokemon-container">
+  <div class="pokemon-card" *ngFor="let pokemon of serverPokemons">
+    <form #pokemonForm="ngForm" (ngSubmit)="guardarCambios(pokemon, pokemonForm)">
+      <label for="{{'nombre_' + pokemon.name}}">Nombre:</label>
+      <input type="text" name="nombre" [(ngModel)]="pokemon.name" [readonly]="!pokemon.editable" id="{{'nombre_' + pokemon.name}}" required>
+      <label for="{{'ataque_' + pokemon.name}}">Ataque:</label>
+      <input type="number" name="ataque" [(ngModel)]="pokemon.attack" [readonly]="!pokemon.editable" id="{{'ataque_' + pokemon.name}}" required>
+      <label for="{{'velocidad_' + pokemon.name}}">Velocidad:</label>
+      <input type="number" name="velocidad" [(ngModel)]="pokemon.speed" [readonly]="!pokemon.editable" id="{{'velocidad_' + pokemon.name}}" required>
+      <label for="{{'defensa_' + pokemon.name}}">Defensa:</label>
+      <input type="number" name="defensa" [(ngModel)]="pokemon.defense" [readonly]="!pokemon.editable" id="{{'defensa_' + pokemon.name}}" required>
+      <label for="{{'salud_' + pokemon.name}}">Salud:</label>
+      <input type="number" name="salud" [(ngModel)]="pokemon.health" [readonly]="!pokemon.editable" id="{{'salud_' + pokemon.name}}" required>
+      <button type="submit">{{ pokemon.editable ? 'Guardar' : 'Editar' }}</button>
+    </form>
   </div>
-
-  <!-- Dentro del parágrafo va la información del Character que se está modifcando -->
 </div>
 
+
 <p>
-  {{ personaje }}
+  {{ pokemonInfo }}
 </p>
